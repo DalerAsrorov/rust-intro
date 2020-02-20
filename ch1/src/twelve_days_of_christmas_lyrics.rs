@@ -36,7 +36,14 @@ fn display_song_lyrics(num: i32) {
     for j in (0..i).rev() {
       match j {
         0 => println!("\t{}", lyrics_array[j as usize]),
-        _ => println!("\t{} {}", j + 1, lyrics_array[j as usize]),
+        _ => {
+          let add_and = match j {
+            1 => ", and".to_string(),
+            _ => "".to_string()
+          };
+
+          println!("\t{} {}{}", j + 1, lyrics_array[j as usize], add_and);
+        }
       }
     }
 
