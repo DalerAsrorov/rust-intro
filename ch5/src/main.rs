@@ -37,4 +37,12 @@ fn main() {
     };
 
     print_user(&user2);
+
+    // tuple structs
+
+    struct Color(i32, i32, i32);
+
+    let red = Color(0, 153, 0);
+
+    println!("{}", red.1);
 }
