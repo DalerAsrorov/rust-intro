@@ -1,17 +1,6 @@
-mod front_of_house {
-    pub mod hosting {
-        pub fn add_to_waitlist() {
-            println!("Added to waitlist!");
-        }
-    }
-    pub mod serving {
-        pub fn serve_food() {
-            // Using Relative Path
-            super::hosting::add_to_waitlist();
-            println!("Served food");
-        }
-    }
-}
+use std:: {io, cmp::Ordering};
+
+mod front_of_house;
 
 mod back_of_house {
     #[derive(Debug)]
