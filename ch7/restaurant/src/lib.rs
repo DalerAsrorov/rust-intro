@@ -36,6 +36,10 @@ mod back_of_house {
 }
 
 use crate::front_of_house::hosting;
+// Relative path version of 'use' below:
+// use self::front_of_house::hosting;
+
+pub use back_of_house::Breakfast as BaseBreakfast;
 
 pub fn eat_at_restaurant() {
     // Absolute path
@@ -50,7 +54,7 @@ pub fn eat_at_restaurant() {
 
 pub fn eat_at_restaurant_two() {
     // Order a breakfast in the summer with Rye toast
-    let mut meal = back_of_house::Breakfast::summer("Rye");
+    let mut meal = BaseBreakfast::summer("Rye");
     // Change our mind about what bread we'd like
     meal.toast = String::from("Wheat");
 
