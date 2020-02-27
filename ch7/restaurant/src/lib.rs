@@ -35,12 +35,17 @@ mod back_of_house {
     }
 }
 
+use crate::front_of_house::hosting;
+
 pub fn eat_at_restaurant() {
     // Absolute path
     crate::front_of_house::hosting::add_to_waitlist();
 
     // Relative path
     front_of_house::serving::serve_food();
+
+    // using the namespace from 'use' keyword
+    hosting::add_to_waitlist();
 }
 
 pub fn eat_at_restaurant_two() {
