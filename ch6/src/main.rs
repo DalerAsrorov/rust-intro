@@ -88,6 +88,7 @@ fn main() {
     some_u8_value_two(Some(0u8));
 
     let mut count = count_non_quarter_coins(Coin::Quarter(UsState::Alaska));
+
     println!("Count: {:?}", count);
     count = count_non_quarter_coins(Coin::Quarter(UsState::Alaska));
     println!("Count: {:?}", count);
