@@ -1,5 +1,7 @@
 mod spreadhseet_cell;
+mod string_methods;
 
+use std::collections::HashMap;
 use spreadhseet_cell::SpreadsheetCell;
 
 fn main() {
@@ -65,7 +67,38 @@ fn main() {
 
     println!("{}\n", ss);
 
+    // also can use ss.bytes() to access each byte
     for c in ss.chars() {
         println!("ss char: {}", c);
     }
+
+    // --- Hash maps Overview ---
+    let mut scores = HashMap::new();
+
+    scores.insert(String::from("Blue"), 10);
+    scores.insert(String::from("Yellow"), 50);
+
+    println!("{:?}", scores);
+
+    let teams = vec![String::from("Blue"), String::from("Yellow")];
+    let initial_scores = vec![10, 50];
+
+    let new_scores: HashMap<_, _> = teams.iter().zip(initial_scores.iter()).collect();
+
+    println!("{:?}\n", new_scores.get(&"Blue".to_string()));
+
+    // a. overwriting a value
+    scores.insert(String::from("Blue"), 23);
+    // b. only inserting a value if the key has no value - entry
+    scores.entry(String::from("Yellow")).or_insert(50);
+    scores.entry(String::from("Darn")).or_insert(50);
+    // c. updating value based on the old value
+
+
+    // iterating over hash map
+    for (key, value) in &scores {
+        println!("{}: {}", key, value);
+    }
+
+    println!("Result: {:?}", string_methods::count_words(&"How are you Daler are you".to_string()))
 }
