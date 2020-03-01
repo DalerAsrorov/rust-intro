@@ -63,5 +63,9 @@ fn main() {
     // the format macro doesn't take ownership of its params
     let ss = format!("{}-{}-{}", ss1, ss2, ss3);
 
-    println!("{}", ss);
+    println!("{}\n", ss);
+
+    for c in ss.chars() {
+        println!("ss char: {}", c);
+    }
 }
