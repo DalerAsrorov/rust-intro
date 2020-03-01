@@ -1,8 +1,10 @@
 mod spreadhseet_cell;
 mod string_methods;
+mod ex1;
 
 use std::collections::HashMap;
 use spreadhseet_cell::SpreadsheetCell;
+use ex1::calculate_avg_median_mode;
 
 fn main() {
     // --- Vectors Overview ---
@@ -100,5 +102,12 @@ fn main() {
         println!("{}: {}", key, value);
     }
 
-    println!("Result: {:?}", string_methods::count_words(&"How are you Daler are you".to_string()))
+    println!("Result: {:?}", string_methods::count_words(&"How are you Daler are you".to_string()));
+
+    // excercise test
+    let mut nums = vec![10, 5, 12, 5, 3, 2, 3, 3];
+
+    let result = calculate_avg_median_mode(&mut nums);
+
+    println!("{:#?}", result);
 }
